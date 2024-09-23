@@ -1,4 +1,42 @@
-.proimg{
+/* Card Image Wrapper */
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Card Image Styles */
+.card img {
+    transform: scale(1);
     height: 250px;
-    width: 250px;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1; /* Image stays behind the text */
+}
+
+.card:hover img {
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+/* Member Icons on Image Bottom */
+.member-icons {
+    position: absolute;
+    bottom: 10px; /* Place the icons 10px from the bottom of the image */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    z-index: 2; /* Ensure icons are on top of the image */
+}
+
+/* On hover, show the icons */
+.card-img-wrapper:hover .member-icons {
+    opacity: 1;
+}
+
+/* General Image Properties */
+.propImg {
+    height: 250px;
+    overflow: hidden;
 }
